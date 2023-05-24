@@ -36,7 +36,7 @@ let extraFlags =
     match get_os with
     | Windows -> []
     | Mac -> posixFlags
-    | Linux -> posixFlags
+    | Linux -> ccopt("-L/usr/lib") @ posixFlags
     | Unknown -> []
     @ posixFlags
 
