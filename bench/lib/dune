@@ -1,0 +1,6 @@
+(library
+    (name OntaBench)
+    (public_name OntaBench.lib)
+    (ocamlopt_flags -linkall)
+    (libraries Onta reperf.lib)
+)

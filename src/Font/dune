@@ -1,0 +1,5 @@
+(library
+    (name Onta_Font)
+    (public_name Onta.Font)
+    (preprocess (pps lwt_ppx))
+    (libraries reason-font-manager lwt lwt.unix sdl2 flex fontkit rebez.lib Onta_Core Onta_Shaders Onta_Geometry Onta_Math))

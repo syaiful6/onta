@@ -1,0 +1,9 @@
+(library
+    (name Onta_Core)
+    (public_name Onta.Core)
+    (js_of_ocaml (javascript_files file.js))
+    (foreign_stubs
+        (language c)
+        (names file)
+        (flags :standard -Wall -Wextra -Werror))
+    (libraries threads timber console.lib str lwt sdl2 flex fontkit Rench reglm re))

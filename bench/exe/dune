@@ -1,0 +1,6 @@
+(executable
+    (name bench)
+    (public_name OntaBench)
+    (libraries OntaBench.lib)
+    (package OntaBench)
+)

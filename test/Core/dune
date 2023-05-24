@@ -1,0 +1,5 @@
+(library
+    (name Onta_Core_Test)
+    (library_flags (-linkall -g))
+    (modules (:standard))
+    (libraries Onta_Core rely.lib))

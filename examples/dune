@@ -1,0 +1,20 @@
+(executables
+    (names Examples)
+    (preprocess (pps brisk-reconciler.ppx lwt_ppx))
+    (package Onta)
+    (public_names Examples)
+    (libraries
+        str
+        ExampleStubs
+        Onta
+        flex
+            ))
+(install
+    (section bin)
+    (package Onta)
+    (files Roboto-Regular.ttf FontAwesome5FreeSolid.otf binary.dat outrun-logo.png outrun-icon.png revery-icon.png))
+
+(install
+    (section bin)
+    (package OntaExampleJs)
+    (files index.html Examples.bc.js gl-matrix-min.js))

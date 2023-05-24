@@ -1,0 +1,4 @@
+(library
+    (name Onta_Lwt)
+    (public_name Onta.lwt)
+    (libraries Onta))

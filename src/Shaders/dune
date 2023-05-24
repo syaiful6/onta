@@ -1,0 +1,4 @@
+(library
+    (name Onta_Shaders)
+    (public_name Onta.Shaders)
+    (libraries lwt lwt.unix sdl2 Onta_Core))

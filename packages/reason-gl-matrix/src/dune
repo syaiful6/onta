@@ -1,0 +1,14 @@
+(library
+ (name reglm)
+ (public_name reglm)
+ (js_of_ocaml
+  (javascript_files gl-matrix_stubs.js quat.js))
+ (foreign_stubs
+    (language cxx)
+    (names glm_stubs)
+    (flags (:include cxx_flags.sexp))))
+
+(rule
+    (targets c_flags.sexp cxx_flags.sexp flags.sexp)
+    (deps (:discover config/discover.exe))
+    (action (run %{discover})))

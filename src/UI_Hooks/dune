@@ -1,0 +1,5 @@
+(library
+    (name Onta_UI_Hooks)
+    (public_name Onta.UI_Hooks)
+    (preprocess (pps brisk-reconciler.ppx lwt_ppx))
+    (libraries lwt lwt.unix sdl2 flex fontkit Onta_Core Onta_Shaders Onta_Geometry Onta_Math Onta_UI))

@@ -1,0 +1,5 @@
+(library
+    (name Onta_Math_Test)
+    (library_flags (-linkall -g))
+    (modules (:standard))
+    (libraries Onta_Math rely.lib))

@@ -1,0 +1,4 @@
+(install
+    (section bin)
+    (package OntaTest)
+    (files test-asset.txt))

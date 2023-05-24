@@ -1,0 +1,6 @@
+(library
+ (name ExampleStubs)
+ (foreign_stubs
+  (language c)
+  (names example_stubs)
+  (flags :standard -Wall -Wextra -Werror)))

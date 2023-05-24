@@ -1,0 +1,20 @@
+(library
+    (name sdl2)
+    (public_name reason-sdl2)
+    (libraries
+        lwt
+        reglm)
+    (library_flags (:include flags.sexp))
+    (foreign_stubs
+        (language c)
+        (names glad)
+        (flags (:include c_flags.sexp)))
+    (foreign_stubs
+        (language cxx)
+        (names sdl2_wrapper gl_wrapper reglfw_image stb_image stb_image_wrapper)
+        (flags (:include cxx_flags.sexp))))
+
+(rule
+    (targets c_flags.sexp cxx_flags.sexp flags.sexp c_library_flags.sexp)
+    (deps (:discover config/discover.exe))
+    (action (run %{discover})))

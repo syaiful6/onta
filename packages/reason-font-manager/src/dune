@@ -1,0 +1,21 @@
+(library
+ (name FontManager)
+ (public_name reason-font-manager)
+ (library_flags
+  (:include flags.sexp))
+ (foreign_stubs
+  (language c)
+  (flags
+   (:include c_flags.sexp)))
+ (foreign_stubs
+  (language cxx)
+  (flags
+   (:include cxx_flags.sexp))
+  (names FontManager FontManagerWindows FontManagerMac FontManagerLinux)))
+
+(rule
+ (targets c_flags.sexp cxx_flags.sexp flags.sexp)
+ (deps
+  (:discover ../config/discover.exe))
+ (action
+  (run %{discover})))

@@ -1,0 +1,8 @@
+(library
+    (name Onta)
+    (preprocess (pps brisk-reconciler.ppx lwt_ppx))
+    (public_name Onta)
+    (libraries console.lib lwt lwt.unix sdl2 Onta_Core Onta_Font Onta_Draw Onta_Math Onta_Shaders Onta_Geometry Onta_UI Onta_UI_Components Onta_Native Onta_UI_Primitives Onta_UI_Hooks))
+(documentation
+   (package Onta)
+   (mld_files index))

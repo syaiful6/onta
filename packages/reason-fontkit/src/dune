@@ -1,0 +1,21 @@
+(library
+  (name fontkit)
+  (public_name fontkit)
+  (js_of_ocaml
+    (javascript_files fontkit.js fontkit-lib.compiled.js))
+  (library_flags (:include flags.sexp))
+  (foreign_stubs
+    (language c)
+    (flags
+        (:include c_flags.sexp)))
+  (foreign_stubs
+    (language cxx)
+    (names fontkit)
+    (flags
+        (:include cxx_flags.sexp)))
+  (libraries lwt))
+
+(rule
+  (targets c_flags.sexp cxx_flags.sexp flags.sexp)
+  (deps (:discover config/discover.exe))
+  (action (run %{discover})))

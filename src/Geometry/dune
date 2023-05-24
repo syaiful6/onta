@@ -1,0 +1,4 @@
+(library
+    (name Onta_Geometry)
+    (public_name Onta.Geometry)
+    (libraries lwt lwt.unix sdl2 Onta_Shaders))

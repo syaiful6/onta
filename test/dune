@@ -1,0 +1,9 @@
+(executable
+    (name TestRunner)
+    (public_name OntaTestRunner)
+    (package OntaTest)
+    (libraries
+        Onta_Core_Test
+        Onta_Math_Test
+        Onta_UI_Test
+            ))

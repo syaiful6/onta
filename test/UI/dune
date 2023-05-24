@@ -1,0 +1,6 @@
+(library
+    (name Onta_UI_Test)
+    (library_flags (-linkall -g))
+    (modules (:standard))
+    (preprocess (pps brisk-reconciler.ppx))
+    (libraries Onta_UI Onta_UI_Primitives Onta_Math rely.lib))

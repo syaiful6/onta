@@ -1,0 +1,64 @@
+{
+  "name": "onta",
+  "version": "0.29.0",
+  "description": "App toolkit built with Reason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryphe/revery/issues"
+  },
+  "scripts": {
+    "build": "esy b",
+    "build:release": "esy b dune build --profile=release --root . -j4",
+    "build:js": "esy b dune build examples/Examples.bc.js",
+    "build:js:release": "esy b dune build examples/Examples.bc.js",
+    "test": "esy b dune runtest",
+    "format": "esy dune build @fmt --auto-promote",
+    "format:windows": "esy b .ci/format.sh",
+    "run": "esy x Examples"
+  },
+  "homepage": "https://github.com/bryphe/revery#readme",
+  "esy": {
+    "build": [
+      "dune build -p reglm,reglm-bench,reason-font-manager,fontkit,reason-sdl2,Onta"
+    ],
+    "install": [
+      "esy-installer Onta.install",
+      "bash -c \"#{os == 'windows' ? 'cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/*.dll \\'$cur__bin\\'': ':'}\""
+    ]
+  },
+  "dependencies": {
+    "@opam/dune": "^2.5.0",
+    "@opam/dune-configurator": "*",
+    "@opam/reason": "^3.6.2",
+    "@opam/lru": "bryphe/lru:lru.opam#2708c70",
+    "@opam/lwt": "^5.0.0",
+    "@opam/lwt_ppx": "^1.1.0",
+    "@opam/markup": "0.8.2",
+    "@opam/ppx_deriving": "*",
+    "@opam/ppx_optcomp": "v0.14.0",
+    "@opam/omd": "ocaml/omd:omd.opam#1535e3c",
+    "@opam/uucp": "*",
+    "@opam/uutf": "*",
+    "@opam/charInfo_width": "*",
+    "@brisk/brisk-reconciler": "briskml/brisk-reconciler#c9d5c4c",
+    "flex": "jordwalke/flex#6ff12fe",
+    "@reason-native/rely": "^3.2.1",
+    "reperf": "^1.5.1",
+    "@reason-native/console": "^0.0.3",
+    "rench": "^1.10.0",
+    "rebez": "github:jchavarri/rebez#03fa3b7",
+    "@revery/timber": "^2.0.0",
+    "esy-freetype2": "^2.9.1001",
+    "@revery/esy-harfbuzz": "^2.6.8002",
+    "esy-sdl2": "revery-ui/esy-sdl2#5f771c6c12a41e2f4295cc1d796b63741fa3c020"
+  },
+  "resolutions": {
+    "@esy-ocaml/reason": "EduardoRFS/reason:reason.json#35aa4df3de0daa60bdc1133dcf97855decac48f7",
+    "@opam/printbox": "0.5"
+  },
+  "devDependencies": {
+    "ocaml": "4.12.x",
+    "esy-astyle": "zbaylin/esy-astyle#59bc21a",
+    "@opam/ocaml-lsp-server": "*"
+  }
+}
