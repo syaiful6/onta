@@ -49,7 +49,7 @@
     "rebez": "github:jchavarri/rebez#03fa3b7",
     "@revery/timber": "^2.0.0",
     "esy-freetype2": "^2.9.1001",
-    "@revery/esy-harfbuzz": "^2.6.8002",
+    "esy-harfbuzz": "syaiful6/esy-harfbuzz#2cb64a6a20a5e8143166c589a3ef163a2232945e",
     "esy-sdl2": "revery-ui/esy-sdl2#5f771c6c12a41e2f4295cc1d796b63741fa3c020"
   },
   "resolutions": {

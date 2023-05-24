@@ -4,6 +4,18 @@ type os =
     | Linux
     | Unknown
 
+type arch =
+    | Arm64
+    | X86
+
+let get_arch () =
+   let ic = Unix.open_process_in "arch" in
+   let arch = input_line ic in
+   let () = close_in(ic) in
+   match arch with
+    | "arm64" -> Arm64
+    | _ -> X86
+
 let uname () =
     let ic = Unix.open_process_in "uname" in
     let uname = input_line ic in
@@ -32,10 +44,24 @@ let posixFlags = []
       | true -> ccopt ("-L/opt/local/lib")
       | false -> []
 
+let armFlags = []
+@ ccopt ("-L/opt/homebrew/lib")
+@ cclib ("-lbz2")
+@ cclib ("-lpng")
+@ cclib ("-lz")
+@ match Sys.file_exists "/opt/local/lib" with
+  | true -> ccopt ("-L/opt/local/lib")
+  | false -> []
+
+let macosFlags =
+match get_arch () with
+    | Arm64 -> armFlags
+    | _ -> posixFlags
+
 let extraFlags =
     match get_os with
     | Windows -> []
-    | Mac -> posixFlags
+    | Mac -> macosFlags
     | Linux -> ccopt("-L/usr/lib") @ posixFlags
     | Unknown -> []
     @ posixFlags
